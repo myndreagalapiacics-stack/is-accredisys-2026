@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IS ACCREDISYS</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/app.css">
+<link rel="stylesheet" href="/static/vendor/pdfjs/pdf_viewer.css">
+<link rel="stylesheet" href="/static/viewer.css">
+</head><body>
+<div id="login" class="login hidden">
+  <div class="card">
+    <h1>IS ACCREDISYS</h1><p class="muted">Accreditation Compliance and Evidence Management</p>
+    <form id="f-cred"><label>Email<input name="email" type="email" required autocomplete="username"></label>
+      <label>Password<span class="password-field"><input id="login-password" name="password" type="password" required autocomplete="current-password">
+        <button id="password-toggle" class="password-toggle" type="button" aria-label="Show password" aria-controls="login-password" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"></path><circle cx="12" cy="12" r="3"></circle><path class="password-toggle-slash" d="m3 3 18 18"></path></svg>
+        </button>
+      </span></label>
+      <button>Continue</button></form>
+    <form id="f-mfa" class="hidden"><p>Enter the 6-digit code from your authenticator app.</p>
+      <label>Verification code<input name="code" inputmode="numeric" maxlength="6" pattern="\d{6}" required autocomplete="one-time-code"></label>
+      <button>Sign in</button> <button type="button" class="link" id="mfa-back">Back</button></form>
+    <p id="login-err" class="err"></p>
+  </div>
+</div>
+<div id="shell" class="hidden">
+  <header>
+    <button id="burger" class="ib" aria-label="Menu">☰</button><strong class="brandname">IS ACCREDISYS</strong>
+    <div class="me"><button id="avatar" class="avatar" aria-label="Account"></button>
+      <div id="menu" class="menu hidden"><div id="who"></div></div></div>
+  </header>
+  <aside id="side"><a class="new" id="newbtn" href="#upload"><b>＋</b> New upload</a><nav id="nav"></nav>
+    <div class="sidebar-bottom"><button class="sidebar-logout" id="logout" type="button"><svg class="sidebar-logout-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 17l5-5-5-5M15 12H3"></path><path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"></path></svg><span>Log out</span></button></div>
+  </aside>
+  <main id="main"></main>
+  <footer class="site-footer" aria-label="University and application footer">
+    <div class="footer-mark-frame">
+      <img class="footer-mark" src="/static/ust-logo-footer.png" alt="University of Santo Tomas — The Catholic University of the Philippines">
+    </div>
+    <div class="footer-copy">
+      <strong>IS ACCREDISYS</strong>
+      <span>Accreditation Compliance and Evidence Management</span>
+    </div>
+  </footer>
+</div>
+<div id="toast" class="toast hidden"></div>
+<dialog id="dlg"></dialog>
+<script src="/static/app.js"></script>
+<script src="/static/viewer.js"></script>
+</body></html>
